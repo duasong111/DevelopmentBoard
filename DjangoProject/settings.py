@@ -68,16 +68,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "DjangoProject.wsgi.application"
 
-ALLOWED_HOSTS = ['10.1.1.220', 'localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['10.1.1.220', 'localhost', '127.0.0.1']
 
-# 连接了服务器上部署的mysql 这样就避免了套接字的问题了
+#连接了服务器上部署的mysql 这样就避免了套接字的问题了
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": 'circuitBoardDB',
+        "NAME": 'testDB',
         "USER": 'root',
         "PASSWORD": 'password',
-        "HOST": '10.1.1.220',
+        "HOST": 'localhost',
         "PORT": 3306,
     }
 }
@@ -93,7 +93,7 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"
     },
     {
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
